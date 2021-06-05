@@ -1,5 +1,7 @@
-﻿using AICListener.Code.Extensions;
+﻿
+using ApplicationCore;
 using Microsoft.AspNet.SignalR;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -66,8 +68,9 @@ namespace AICListener
 
         public void SendObj(string objJson)
         {
-            var objMessage = JsonExtensions.Deserialize<ObjMessage>(objJson);
+            var objMessage = JsonConvert.DeserializeObject<ObjMessage>(objJson);
             var messageToSend = $"{objMessage.SoGhe} - {objMessage.TrangThai}";
+
             Clients.All.AddObjMessage(_users[Context.ConnectionId], messageToSend);
             ObjReceived?.Invoke(Context.ConnectionId, messageToSend);
         }

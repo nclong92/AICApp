@@ -1,5 +1,7 @@
-﻿using AICListener.Code.Extensions;
+﻿
+using ApplicationCore;
 using Microsoft.Owin.Hosting;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,11 +41,8 @@ namespace AICListener
         {
             this.BeginInvoke(new Action(() =>
             {
-                var objMessage = JsonExtensions.Deserialize<ObjMessage>(obj);
-                var messageToSend = $"{objMessage.SoGhe} - {objMessage.TrangThai}";
-
-                _log.Info($"{messageToSend}");
-                writeToLog($"{messageToSend}");
+                _log.Info($"{obj}");
+                writeToLog($"{obj}");
             }));
         }
 

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNet.SignalR.Client;
+﻿using ApplicationCore;
+using Microsoft.AspNet.SignalR.Client;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,6 +50,7 @@ namespace AICSenderFake
 
                 txtServerAIC.Enabled = false;
                 btnHuy.Enabled = true;
+                grpSend.Enabled = true;
 
             }
             catch (Exception ex)
@@ -79,7 +82,7 @@ namespace AICSenderFake
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            if(_signalRConnection != null)
+            if (_signalRConnection != null)
             {
                 _signalRConnection.Stop();
                 _signalRConnection.Dispose();
@@ -89,6 +92,105 @@ namespace AICSenderFake
                 btnHuy.Enabled = false;
 
                 lblTrangThai.Text = "Chờ kết nối";
+                grpSend.Enabled = false;
+            }
+        }
+
+        private void btn1Gui_Click(object sender, EventArgs e)
+        {
+            lbl1ThongBao.Text = "";
+            var trangThai = rd1DangKy.Checked ? "Đăng ký" : (rd1Huy.Checked ? "Hủy" : "");
+            var soGhe = txtGhe.Text;
+
+            if (string.IsNullOrEmpty(soGhe) || string.IsNullOrEmpty(trangThai))
+            {
+                lbl1ThongBao.Text = "Vui lòng chọn số ghế và trạng thái";
+            }
+            else
+            {
+                var objMessage = new ObjMessage()
+                {
+                    AICSenderFake = "AIC Sender Fake Name",
+                    SoGhe = soGhe,
+                    TrangThai = trangThai
+                };
+
+                var objMessageStr = JsonConvert.SerializeObject(objMessage);
+
+                _hubProxy.Invoke("SendObj", objMessageStr);
+            }
+        }
+
+        private async void btnnGui_Click(object sender, EventArgs e)
+        {
+            lblnThongBao.Text = "";
+
+            int soLenh = Convert.ToInt32(numLenh.Value);
+
+            if (soLenh <= 0)
+            {
+                lblnThongBao.Text = "Số lệnh phải lớn hơn 0";
+            }
+            else
+            {
+                int oldNumber = -1;
+                for (int i = 1; i <= soLenh; i++)
+                {
+                    var trangthai = string.Empty;
+
+                    if (rdnDangKy.Checked)
+                    {
+                        trangthai = "Đăng ký";
+                    }
+                    else if (rdnHuy.Checked)
+                    {
+                        trangthai = "Hủy";
+                    }
+                    else if (rdnNgauNhien.Checked)
+                    {
+                        var rand = new Random();
+                        var randNumber = rand.Next(1, 100);
+                        if (randNumber % 2 == 0)
+                        {
+                            trangthai = "Đăng ký";
+                        }
+                        else
+                        {
+                            trangthai = "Hủy";
+                        }
+                    }
+
+                    var randGheNumber = GetNewRandom(oldNumber);
+                    oldNumber = randGheNumber;
+
+                    var objMessage = new ObjMessage()
+                    {
+                        AICSenderFake = "AIC Sender Fake Name",
+                        SoGhe = $"ABC{randGheNumber}",
+                        TrangThai = trangthai
+                    };
+
+                    var objMessageStr = JsonConvert.SerializeObject(objMessage);
+
+                    await _hubProxy.Invoke("SendObj", objMessageStr);
+
+                }
+            }
+
+        }
+
+        private int GetNewRandom(int oldNumber)
+        {
+            var random = new Random();
+            var randomGhe = random.Next(1, 1000);
+
+            if (randomGhe != oldNumber)
+            {
+                return randomGhe;
+            }
+            else
+            {
+                return GetNewRandom(oldNumber);
             }
         }
     }

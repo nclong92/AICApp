@@ -86,14 +86,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientItem.cs" />
-    <Compile Include="Code\Extensions\JsonExtensions.cs" />
     <Compile Include="FrmAICListener.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAICListener.Designer.cs">
       <DependentUpon>FrmAICListener.cs</DependentUpon>
     </Compile>
-    <Compile Include="ObjMessage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServerHub.cs" />
@@ -130,6 +128,12 @@
     <Content Include="Scripts\jquery-1.6.4.min.js" />
     <Content Include="Scripts\jquery.signalR-2.1.0.js" />
     <Content Include="Scripts\jquery.signalR-2.1.0.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApplicationCore\ApplicationCore.csproj">
+      <Project>{3d8f78a1-500f-4af5-8736-34d62adfd5bf}</Project>
+      <Name>ApplicationCore</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
