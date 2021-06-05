@@ -68,7 +68,7 @@ namespace AICListener
         {
             var objMessage = JsonExtensions.Deserialize<ObjMessage>(objJson);
             var messageToSend = $"{objMessage.SoGhe} - {objMessage.TrangThai}";
-            Clients.All.AddMessage(_users[Context.ConnectionId], messageToSend);
+            Clients.All.AddObjMessage(_users[Context.ConnectionId], messageToSend);
             ObjReceived?.Invoke(Context.ConnectionId, messageToSend);
         }
         #endregion

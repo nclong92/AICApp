@@ -131,6 +131,7 @@ namespace AICListener
             // 
             // btnHuy
             // 
+            this.btnHuy.Enabled = false;
             this.btnHuy.Location = new System.Drawing.Point(346, 92);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(100, 23);

@@ -31,52 +31,52 @@ namespace AICSenderFake
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAICSenderFake));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.numLenh = new System.Windows.Forms.NumericUpDown();
+            this.rd1Huy = new System.Windows.Forms.RadioButton();
+            this.rd1DangKy = new System.Windows.Forms.RadioButton();
+            this.btn1Gui = new System.Windows.Forms.Button();
+            this.txtGhe = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.rdnNgauNhien = new System.Windows.Forms.RadioButton();
+            this.rdnHuy = new System.Windows.Forms.RadioButton();
+            this.rdnDangKy = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnnGui = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblTrangThai = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnHuy = new System.Windows.Forms.Button();
+            this.btnKetNoi = new System.Windows.Forms.Button();
+            this.txtServerAIC = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLenh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.numLenh);
+            this.groupBox1.Controls.Add(this.rd1Huy);
+            this.groupBox1.Controls.Add(this.rd1DangKy);
+            this.groupBox1.Controls.Add(this.btn1Gui);
+            this.groupBox1.Controls.Add(this.txtGhe);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.radioButton5);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton4);
+            this.groupBox1.Controls.Add(this.rdnNgauNhien);
+            this.groupBox1.Controls.Add(this.rdnHuy);
+            this.groupBox1.Controls.Add(this.rdnDangKy);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.btnnGui);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.lblTrangThai);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.btnHuy);
+            this.groupBox1.Controls.Add(this.btnKetNoi);
+            this.groupBox1.Controls.Add(this.txtServerAIC);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label1);
@@ -86,50 +86,48 @@ namespace AICSenderFake
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // numericUpDown1
+            // numLenh
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(55, 392);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(62, 20);
-            this.numericUpDown1.TabIndex = 20;
+            this.numLenh.Location = new System.Drawing.Point(55, 392);
+            this.numLenh.Name = "numLenh";
+            this.numLenh.Size = new System.Drawing.Size(62, 20);
+            this.numLenh.TabIndex = 20;
             // 
-            // radioButton2
+            // rd1Huy
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(216, 257);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(44, 17);
-            this.radioButton2.TabIndex = 16;
-            this.radioButton2.Text = "Hủy";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rd1Huy.AutoSize = true;
+            this.rd1Huy.Location = new System.Drawing.Point(216, 257);
+            this.rd1Huy.Name = "rd1Huy";
+            this.rd1Huy.Size = new System.Drawing.Size(44, 17);
+            this.rd1Huy.TabIndex = 16;
+            this.rd1Huy.Text = "Hủy";
+            this.rd1Huy.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rd1DangKy
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(134, 257);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(65, 17);
-            this.radioButton1.TabIndex = 15;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Đăng ký";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rd1DangKy.AutoSize = true;
+            this.rd1DangKy.Location = new System.Drawing.Point(134, 257);
+            this.rd1DangKy.Name = "rd1DangKy";
+            this.rd1DangKy.Size = new System.Drawing.Size(65, 17);
+            this.rd1DangKy.TabIndex = 15;
+            this.rd1DangKy.Text = "Đăng ký";
+            this.rd1DangKy.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btn1Gui
             // 
-            this.button3.Location = new System.Drawing.Point(286, 253);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(96, 23);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Gửi";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn1Gui.Location = new System.Drawing.Point(286, 253);
+            this.btn1Gui.Name = "btn1Gui";
+            this.btn1Gui.Size = new System.Drawing.Size(96, 23);
+            this.btn1Gui.TabIndex = 11;
+            this.btn1Gui.Text = "Gửi";
+            this.btn1Gui.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // txtGhe
             // 
-            this.textBox2.Location = new System.Drawing.Point(39, 255);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(62, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtGhe.Location = new System.Drawing.Point(39, 255);
+            this.txtGhe.Name = "txtGhe";
+            this.txtGhe.Size = new System.Drawing.Size(62, 20);
+            this.txtGhe.TabIndex = 10;
             // 
             // label6
             // 
@@ -141,35 +139,37 @@ namespace AICSenderFake
             this.label6.Text = "Ghế";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // radioButton5
+            // rdnNgauNhien
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(284, 395);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(80, 17);
-            this.radioButton5.TabIndex = 19;
-            this.radioButton5.Text = "Ngẫu nhiên";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rdnNgauNhien.AutoSize = true;
+            this.rdnNgauNhien.Location = new System.Drawing.Point(284, 395);
+            this.rdnNgauNhien.Name = "rdnNgauNhien";
+            this.rdnNgauNhien.Size = new System.Drawing.Size(80, 17);
+            this.rdnNgauNhien.TabIndex = 19;
+            this.rdnNgauNhien.Text = "Ngẫu nhiên";
+            this.rdnNgauNhien.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rdnHuy
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(231, 395);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(44, 17);
-            this.radioButton3.TabIndex = 18;
-            this.radioButton3.Text = "Hủy";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdnHuy.AutoSize = true;
+            this.rdnHuy.Location = new System.Drawing.Point(231, 395);
+            this.rdnHuy.Name = "rdnHuy";
+            this.rdnHuy.Size = new System.Drawing.Size(44, 17);
+            this.rdnHuy.TabIndex = 18;
+            this.rdnHuy.Text = "Hủy";
+            this.rdnHuy.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // rdnDangKy
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(151, 395);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(65, 17);
-            this.radioButton4.TabIndex = 17;
-            this.radioButton4.Text = "Đăng ký";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rdnDangKy.AutoSize = true;
+            this.rdnDangKy.Checked = true;
+            this.rdnDangKy.Location = new System.Drawing.Point(151, 395);
+            this.rdnDangKy.Name = "rdnDangKy";
+            this.rdnDangKy.Size = new System.Drawing.Size(65, 17);
+            this.rdnDangKy.TabIndex = 17;
+            this.rdnDangKy.TabStop = true;
+            this.rdnDangKy.Text = "Đăng ký";
+            this.rdnDangKy.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -190,14 +190,14 @@ namespace AICSenderFake
             this.label7.TabIndex = 13;
             this.label7.Text = "Giả lập gửi n lệnh Random vị trí";
             // 
-            // button4
+            // btnnGui
             // 
-            this.button4.Location = new System.Drawing.Point(392, 392);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(96, 23);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Gửi";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnnGui.Location = new System.Drawing.Point(392, 392);
+            this.btnnGui.Name = "btnnGui";
+            this.btnnGui.Size = new System.Drawing.Size(96, 23);
+            this.btnnGui.TabIndex = 12;
+            this.btnnGui.Text = "Gửi";
+            this.btnnGui.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -209,14 +209,14 @@ namespace AICSenderFake
             this.label5.TabIndex = 8;
             this.label5.Text = "Giả lập gửi 1 lệnh";
             // 
-            // label4
+            // lblTrangThai
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(171, 135);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Chờ kết nối";
+            this.lblTrangThai.AutoSize = true;
+            this.lblTrangThai.Location = new System.Drawing.Point(171, 135);
+            this.lblTrangThai.Name = "lblTrangThai";
+            this.lblTrangThai.Size = new System.Drawing.Size(61, 13);
+            this.lblTrangThai.TabIndex = 7;
+            this.lblTrangThai.Text = "Chờ kết nối";
             // 
             // label3
             // 
@@ -227,30 +227,34 @@ namespace AICSenderFake
             this.label3.TabIndex = 6;
             this.label3.Text = "Trạng thái:";
             // 
-            // button2
+            // btnHuy
             // 
-            this.button2.Location = new System.Drawing.Point(422, 95);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Hủy";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnHuy.Enabled = false;
+            this.btnHuy.Location = new System.Drawing.Point(422, 95);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(96, 23);
+            this.btnHuy.TabIndex = 5;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // button1
+            // btnKetNoi
             // 
-            this.button1.Location = new System.Drawing.Point(320, 96);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Kết nối";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnKetNoi.Location = new System.Drawing.Point(320, 96);
+            this.btnKetNoi.Name = "btnKetNoi";
+            this.btnKetNoi.Size = new System.Drawing.Size(96, 23);
+            this.btnKetNoi.TabIndex = 4;
+            this.btnKetNoi.Text = "Kết nối";
+            this.btnKetNoi.UseVisualStyleBackColor = true;
+            this.btnKetNoi.Click += new System.EventHandler(this.btnKetNoi_Click);
             // 
-            // textBox1
+            // txtServerAIC
             // 
-            this.textBox1.Location = new System.Drawing.Point(96, 98);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(207, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtServerAIC.Location = new System.Drawing.Point(96, 98);
+            this.txtServerAIC.Name = "txtServerAIC";
+            this.txtServerAIC.Size = new System.Drawing.Size(207, 20);
+            this.txtServerAIC.TabIndex = 3;
+            this.txtServerAIC.Text = "http://localhost:8080";
             // 
             // label2
             // 
@@ -290,7 +294,7 @@ namespace AICSenderFake
             this.Text = "AIC Sender Fake";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLenh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -299,24 +303,24 @@ namespace AICSenderFake
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.NumericUpDown numLenh;
+        private System.Windows.Forms.RadioButton rd1Huy;
+        private System.Windows.Forms.RadioButton rd1DangKy;
+        private System.Windows.Forms.Button btn1Gui;
+        private System.Windows.Forms.TextBox txtGhe;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton rdnNgauNhien;
+        private System.Windows.Forms.RadioButton rdnHuy;
+        private System.Windows.Forms.RadioButton rdnDangKy;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnnGui;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTrangThai;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Button btnKetNoi;
+        private System.Windows.Forms.TextBox txtServerAIC;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
