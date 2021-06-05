@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31313.79
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AICListener", "AICListener\AICListener.csproj", "{223AB452-7FE2-41BE-8D3A-4837E2FEA6FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AICSenderFake", "AICSenderFake\AICSenderFake.csproj", "{F9066E30-2054-48D3-9126-7CB3385511B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{223AB452-7FE2-41BE-8D3A-4837E2FEA6FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{223AB452-7FE2-41BE-8D3A-4837E2FEA6FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{223AB452-7FE2-41BE-8D3A-4837E2FEA6FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{223AB452-7FE2-41BE-8D3A-4837E2FEA6FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9066E30-2054-48D3-9126-7CB3385511B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9066E30-2054-48D3-9126-7CB3385511B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9066E30-2054-48D3-9126-7CB3385511B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9066E30-2054-48D3-9126-7CB3385511B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {200972A8-79C7-4B19-9442-49CC11BD328E}
+	EndGlobalSection
+EndGlobal
