@@ -14,38 +14,18 @@ namespace AICListener
     public partial class FrmAICListener : Form
     {
         private IDisposable _signalR;
-        public log4net.ILog log;
+        private BindingList<ClientItem> _clients = new BindingList<ClientItem>();
+
+        public log4net.ILog _log;
 
         public FrmAICListener()
         {
             log4net.Config.BasicConfigurator.Configure();
-
-            log = log4net.LogManager.GetLogger(typeof(Program));
+            _log = log4net.LogManager.GetLogger(typeof(Program));
 
             InitializeComponent();
 
-            log.Info("form constructor");
-        }
-
-        private void txtKetNoi_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-                _signalR = WebApp.Start<Startup>(txtServerAIC.Text);
-
-                btnKetNoi.Enabled = false;
-                txtServerAIC.Enabled = false;
-                btnHuy.Enabled = true;
-
-                writeToLog($"{DateTime.Now} - Server started at: {txtServerAIC.Text}");
-                log.Info($"txtKetNoi_Click -> Server started at: {txtServerAIC.Text}");
-            }
-            catch (Exception ex)
-            {
-                log.Error($"txtKetNoi_Click -> {ex.Message}");
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            _log.Info("form constructor");
         }
 
         private void writeToLog(string log)
@@ -54,16 +34,60 @@ namespace AICListener
             {
                 this.BeginInvoke(new Action(() =>
                 {
-                    string[] row = { log };
+                    var logDisplay = $"{DateTime.Now} - {log}";
+                    
+                    string[] row = { logDisplay };
                     var listViewItem = new ListViewItem(row);
                     lvLichSu.Items.Add(listViewItem);
                 }));
             }
             else
             {
-                string[] row = { log };
+                var logDisplay = $"{DateTime.Now} - {log}";
+
+                string[] row = { logDisplay };
                 var listViewItem = new ListViewItem(row);
                 lvLichSu.Items.Add(listViewItem);
+            }
+        }
+
+        private void btnKetNoi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _signalR = WebApp.Start<Startup>(txtServerAIC.Text);
+
+                btnKetNoi.Enabled = false;
+                txtServerAIC.Enabled = false;
+                btnHuy.Enabled = true;
+
+                _log.Info($"Server started at: {txtServerAIC.Text}");
+                writeToLog($"Server started at: {txtServerAIC.Text}");
+            }
+            catch (Exception ex)
+            {
+                _log.Error($"txtKetNoi_Click -> {ex.Message}");
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            _clients.Clear();
+
+            ServerHub.ClearState();
+
+            if(_signalR != null)
+            {
+                _signalR.Dispose();
+                _signalR = null;
+
+                btnHuy.Enabled = false;
+                btnKetNoi.Enabled = true;
+                txtServerAIC.Enabled = true;
+
+                _log.Info("Server stopped");
+                writeToLog("Server stopped");
             }
         }
     }

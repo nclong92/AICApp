@@ -32,6 +32,7 @@ namespace AICListener
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAICListener));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lvLichSu = new System.Windows.Forms.ListView();
+            this.colHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnXuatExcel = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@ namespace AICListener
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.colHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +79,11 @@ namespace AICListener
             this.lvLichSu.TabIndex = 13;
             this.lvLichSu.UseCompatibleStateImageBehavior = false;
             this.lvLichSu.View = System.Windows.Forms.View.Details;
+            // 
+            // colHeader
+            // 
+            this.colHeader.Text = "Chi tiết";
+            this.colHeader.Width = 713;
             // 
             // txtSearch
             // 
@@ -132,6 +137,7 @@ namespace AICListener
             this.btnHuy.TabIndex = 7;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnKetNoi
             // 
@@ -141,7 +147,7 @@ namespace AICListener
             this.btnKetNoi.TabIndex = 6;
             this.btnKetNoi.Text = "Kết nối";
             this.btnKetNoi.UseVisualStyleBackColor = true;
-            this.btnKetNoi.Click += new System.EventHandler(this.txtKetNoi_Click);
+            this.btnKetNoi.Click += new System.EventHandler(this.btnKetNoi_Click);
             // 
             // txtServerAIC
             // 
@@ -149,6 +155,7 @@ namespace AICListener
             this.txtServerAIC.Name = "txtServerAIC";
             this.txtServerAIC.Size = new System.Drawing.Size(153, 20);
             this.txtServerAIC.TabIndex = 5;
+            this.txtServerAIC.Text = "http://localhost:8080";
             // 
             // label2
             // 
@@ -177,11 +184,6 @@ namespace AICListener
             this.pictureBox1.Size = new System.Drawing.Size(100, 56);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // colHeader
-            // 
-            this.colHeader.Text = "Chi tiết";
-            this.colHeader.Width = 713;
             // 
             // FrmAICListener
             // 
