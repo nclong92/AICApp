@@ -70,6 +70,7 @@ namespace AICListener
             // 
             // lvLichSu
             // 
+            this.lvLichSu.Alignment = System.Windows.Forms.ListViewAlignment.Default;
             this.lvLichSu.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colHeader});
             this.lvLichSu.HideSelection = false;

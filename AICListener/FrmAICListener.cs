@@ -113,6 +113,9 @@ namespace AICListener
                 var listViewItem = new ListViewItem(row);
                 lvLichSu.Items.Add(listViewItem);
             }
+
+            lvLichSu.EnsureVisible(lvLichSu.Items.Count - 1);
+            lvLichSu.Update();
         }
 
         private void btnKetNoi_Click(object sender, EventArgs e)
