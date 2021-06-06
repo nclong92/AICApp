@@ -156,7 +156,6 @@ namespace AICListener
             this.txtServerAIC.Name = "txtServerAIC";
             this.txtServerAIC.Size = new System.Drawing.Size(153, 20);
             this.txtServerAIC.TabIndex = 5;
-            this.txtServerAIC.Text = "http://localhost:8080";
             // 
             // label2
             // 
@@ -196,6 +195,7 @@ namespace AICListener
             this.MaximizeBox = false;
             this.Name = "FrmAICListener";
             this.Text = "AIC Listener";
+            this.Load += new System.EventHandler(this.FrmAICListener_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

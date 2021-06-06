@@ -1,10 +1,13 @@
 ﻿
+using AICListener.Code;
+using AICListener.Properties;
 using ApplicationCore;
 using Microsoft.Owin.Hosting;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -25,7 +28,7 @@ namespace AICListener
         {
             log4net.Config.BasicConfigurator.Configure();
             _log = log4net.LogManager.GetLogger(typeof(Program));
-
+            
             InitializeComponent();
 
             _log.Info("form constructor");
@@ -126,6 +129,8 @@ namespace AICListener
 
                 _log.Info($"Server started at: {txtServerAIC.Text}");
                 writeToLog($"Server started at: {txtServerAIC.Text}");
+
+                SettingsExtensions.SetValue(txtServerAIC.Text);
             }
             catch (Exception ex)
             {
@@ -155,6 +160,11 @@ namespace AICListener
                 _log.Info("Server stopped");
                 writeToLog("Server stopped");
             }
+        }
+
+        private void FrmAICListener_Load(object sender, EventArgs e)
+        {
+            txtServerAIC.Text = SettingsExtensions.GetValue("AICServerName");
         }
     }
 }
