@@ -2,6 +2,7 @@
 using AICListener.Code;
 using AICListener.Properties;
 using ApplicationCore;
+using ApplicationCore.Code;
 using Microsoft.Owin.Hosting;
 using Newtonsoft.Json;
 using System;
@@ -10,6 +11,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +30,7 @@ namespace AICListener
         {
             log4net.Config.BasicConfigurator.Configure();
             _log = log4net.LogManager.GetLogger(typeof(Program));
-            
+
             InitializeComponent();
 
             _log.Info("form constructor");
@@ -165,6 +167,45 @@ namespace AICListener
         private void FrmAICListener_Load(object sender, EventArgs e)
         {
             txtServerAIC.Text = SettingsExtensions.GetValue("AICServerName");
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnXuatExcel_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+            app.Visible = true;
+            Microsoft.Office.Interop.Excel.Workbook wb = app.Workbooks.Add(1);
+            Microsoft.Office.Interop.Excel.Worksheet ws = (Microsoft.Office.Interop.Excel.Worksheet)wb.Worksheets[1];
+
+            int i = 1;
+            int i2 = 1;
+
+            foreach(ListViewItem lvi in lvLichSu.Items)
+            {
+                i = 1;
+                foreach(ListViewItem.ListViewSubItem lvs in lvi.SubItems)
+                {
+                    ws.Cells[i2, i] = lvs.Text;
+                    i++;
+                }
+                i2++;
+            }
+
+            var currentPath = Directory.GetCurrentDirectory();
+
+            var excelName = $"{StringHelper.UniqueKey(10)}.xlsx";
+
+            var filePath = $"{currentPath}\\{excelName}";
+
+            wb.SaveAs(filePath);
+            //wb.Close();
+            //app.Quit();
+
+            //MessageBox.Show($"Tạo file excel thành công. Bạn có thể tìm tệp theo đường dẫn: {filePath}");
         }
     }
 }
