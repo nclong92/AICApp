@@ -187,10 +187,10 @@ namespace AICListener
             int i = 1;
             int i2 = 1;
 
-            foreach(ListViewItem lvi in lvLichSu.Items)
+            foreach (ListViewItem lvi in lvLichSu.Items)
             {
                 i = 1;
-                foreach(ListViewItem.ListViewSubItem lvs in lvi.SubItems)
+                foreach (ListViewItem.ListViewSubItem lvs in lvi.SubItems)
                 {
                     ws.Cells[i2, i] = lvs.Text;
                     i++;
@@ -202,8 +202,13 @@ namespace AICListener
 
             var excelName = $"{StringHelper.UniqueKey(10)}.xlsx";
 
-            var filePath = $"{currentPath}\\{excelName}";
+            var subPath = $"{currentPath}\\excel";
+            if (!System.IO.Directory.Exists(subPath))
+            {
+                System.IO.Directory.CreateDirectory(subPath);
+            }
 
+            var filePath = $"{subPath}\\{excelName}";
             wb.SaveAs(filePath);
             //wb.Close();
             //app.Quit();
