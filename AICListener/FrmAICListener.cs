@@ -24,6 +24,8 @@ namespace AICListener
         private IDisposable _signalR;
         private BindingList<ClientItem> _clients = new BindingList<ClientItem>();
 
+        static List<string> _serverLogs = new List<string>();
+
         public log4net.ILog _log;
 
         public FrmAICListener()
@@ -99,6 +101,7 @@ namespace AICListener
                 this.BeginInvoke(new Action(() =>
                 {
                     var logDisplay = $"{DateTime.Now} - {log}";
+                    _serverLogs.Add(logDisplay);
 
                     string[] row = { logDisplay };
                     var listViewItem = new ListViewItem(row);
@@ -108,6 +111,7 @@ namespace AICListener
             else
             {
                 var logDisplay = $"{DateTime.Now} - {log}";
+                _serverLogs.Add(logDisplay);
 
                 string[] row = { logDisplay };
                 var listViewItem = new ListViewItem(row);
@@ -170,11 +174,49 @@ namespace AICListener
         private void FrmAICListener_Load(object sender, EventArgs e)
         {
             txtServerAIC.Text = SettingsExtensions.GetValue("AICServerName");
+
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            RemoveAllLog();
+
+            if (!string.IsNullOrEmpty(txtSearch.Text))
+            {
+                foreach (var item in _serverLogs)
+                {
+                    if (item.ToLower().Contains($"- {txtSearch.Text.ToLower()}"))
+                    {
+                        lvLichSu.Items.Add(item);
+                    }
+                }
+            }
+            else
+            {
+                RefreshAllLog();
+            }
             
+
+        }
+
+        private void RemoveAllLog()
+        {
+            foreach(ListViewItem item in lvLichSu.Items)
+            {
+                lvLichSu.Items.Remove(item);
+            }
+        }
+
+        private void RefreshAllLog()
+        {
+            RemoveAllLog();
+
+            foreach (var item in _serverLogs)
+            {
+                string[] row = { item };
+                var listViewItem = new ListViewItem(row);
+                lvLichSu.Items.Add(listViewItem);
+            }
         }
 
         private void btnXuatExcel_Click(object sender, EventArgs e)
